@@ -1,6 +1,16 @@
-
+### Data yang digunakan
+Data bersumber dari kaggle yaitu data House Property Sales dari tahun 2007-2019. Data ini merupakan data bulanan (triwulan). Selanjutnya untuk analisis dilakukan filterisasi pada jumlah kamar tidur, dengan jumlah kamar tidur sebanyak 3 dipilih untuk dilakukan analisis. Sehingga total data untuk analisis berjumlah 100 baris.
 
 ```{r}
-x <- 124
+library(rio)
+data <- import("https://raw.githubusercontent.com/AsfiahA/Tugas-mpdw/main/Tugas1/data1.csv")
+View(data.ts)
+data.ts <- ts(data$saledate)
+data.ts <- ts(data$MA)
+```
+
+```{r}
+ts.plot(data, xlab = "Sale Date", ylab = "Moving Average", main = "Time Series Plot")
+points(data.ts)
 ```
 
