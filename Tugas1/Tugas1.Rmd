@@ -13,8 +13,6 @@ Data bersumber dari kaggle yaitu data Daily Gold Price dari tahun 2014-2022. Dat
 library(rio)
 library(readxl)
 data <- import("https://raw.githubusercontent.com/AsfiahA/Tugas-mpdw/main/Tugas1/datampdw.csv")
-# data <- read_excel("C:/KULYAHH/SEMESTER 5/MPDW/TUGAS/PRAK 1/data.xlsx", sheet="dt")
-#data <- read_excel("C:/Users/asfiah adiba/Downloads/dataa.xlsx", sheet="dt")
 View(data)
 data.ts <- ts(data$Date)
 data.ts <- ts(data$Price)
