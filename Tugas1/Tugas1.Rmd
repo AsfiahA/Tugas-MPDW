@@ -177,7 +177,7 @@ colnames(akurasides.opt) <- c("Akurasi (optimum) lambda=1 dan gamma=0.176")
 akurasides.opt
 ```
 
-Hasil akurasi dari data latih dengan lamda=1 dan gamma=0.176 memiliki hasil yang optimal dan dapat dikategorikan peramalan sangat baik berdasarkan nilai MAPE-nya.
+Hasil akurasi dari data latih dengan lamda=1 dan gamma=0.176 memiliki hasil yang optimal dan dapat dikategorikan peramalan sangat baik berdasarkan nilai MAPE-nya yang kurang dari 10%.
 
 #### Akurasi Data Uji
 
@@ -197,7 +197,7 @@ row.names(akurasitestingdes)<- c("SSE", "MSE", "MAPE")
 colnames(akurasitestingdes) <- c("des opt")
 akurasitestingdes
 ```
-Hasil akurasi dari data uji dapat dikategorikan peramalan baik berdasarkan MAPE-nya yang bernilai 19.27.
+Hasil akurasi dari data uji dapat dikategorikan peramalan yang baik berdasarkan MAPE-nya yang bernilai 19.27.
 
 # Kesimpulan
 ```{r}
