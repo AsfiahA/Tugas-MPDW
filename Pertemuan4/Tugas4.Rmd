@@ -95,11 +95,7 @@ Berdasarkan scatterplot tersebut, terlihat bahwa terdapat hubungan positif antar
 cor(yt_ma,yt_1_ma)
 ```
 
-Korelasi antara $Y_t$ dengan $Y_{t-1}$ dari hasil simulasi mendekati perhitungan teoritis yaitu
 
-$$
-\rho_1=\frac{\theta_{1}+\theta_{1}\theta_{2}}{1+\theta_{1}^2+\theta_{2}^2}=\frac{(-0.4)+(0.4)(0.6)}{1+(0.4)^2+(0.6)^2}=0.421
-$$
 ## Korelasi antara $Y_t$ dengan $Y_{t-2}$
 
 ```{r}
@@ -119,11 +115,7 @@ plot(y=yt_ma2,x=yt_2_ma)
 ```{r}
 cor(yt_ma2,yt_2_ma)
 ```
-Berdasarkan scatterplot tersebut, terlihat bahwa terdapat hubungan positif antara $Y_t$ dengan $Y_{t-2}$. Hal ini sesuai dengan teori yang ada
 
-$$
-\rho_1=\frac{-\theta_{2}}{1+\theta_{1}^2+\theta_{2}^2}=\frac{-(-0.4)}{1+(0.4)^2+(0.6)^2}=2.631
-$$
 
 ## Korelasi antara $Y_t$ dengan $Y_{t-3}$
 
@@ -202,7 +194,7 @@ Berdasarkan plot PACF tersebut, terlihat bahwa plot PACF *cuts off* pada lag per
 ```{r}
 TSA::eacf(ar)
 ```
-Berdasarkan pola segitiga nol pada plot EACF, terlihat bahwa segitiga nol berada pada ordo AR(1) dan ordo MA(2)
+Berdasarkan pola segitiga nol pada plot EACF, terlihat bahwa segitiga nol berada pada ordo AR(1) dan ordo MA(1)
 
 Dapat disimpulkan bahwa data tersebut stasioner
 
@@ -228,12 +220,6 @@ Berdasarkan scatterplot tersebut, terlihat bahwa terdapat hubungan positif antar
 cor(yt_ar,yt_1_ar)
 ```
 
-Korelasi antara $Y_t$ dengan $Y_{t-1}$ dari hasil simulasi mendekati perhitungan teoritis yaitu 
-
-$$
-\rho_1=\frac{\phi_{1}}{1-\phi_{2}}=\frac{0.5}{1-0.2}=0.625
-$$
-
 
 ## Korelasi antara $Y_t$ dengan $Y_{t-2}$
 
@@ -254,11 +240,7 @@ Berdasarkan scatterplot tersebut, terlihat bahwa terdapat hubungan positif antar
 cor(yt_ar2,yt_2_ar)
 ```
 
-Korelasi antara $Y_t$ dengan $Y_{t-2}$ dari hasil simulasi mendekati perhitungan teoritis yaitu 
 
-$$
-\rho_2=\frac{\phi_{2}(1-\phi_{2})+\phi_{1}^2}{1-\phi_{2}}=\frac{0.2(1-0.2)+0.5^2}{1-0.2}=0.512
-$$
 ## Korelasi antara $Y_t$ dengan $Y_{t-3}$
 
 ```{r}
