@@ -149,7 +149,7 @@ eacf(train.diff)
 
 Identifikasi model menggunakan plot EACF dilakukan dengan melihat ujung segitiga pada pola segitiga nol. Dalam hal ini model tentatif yang terbentuk adalah ARIMA(0,1,1), ARIMA(1,1,1).
 
-Model yang dipilih untuk dilakukan pendugaan yaitu model dari plot EACF, kara jika dilihat dari plot ACF dan PACF-nya tidak ada yg cuts off di lag pertama, sehingga jika menggunakan model dari plot ACF dan PACF ordo yang dihasilkan terlalu besar.
+Model yang dipilih untuk dilakukan pendugaan yaitu model dari plot EACF, karna jika dilihat dari plot ACF dan PACF-nya tidak ada yg cuts off di lag pertama, sehingga jika menggunakan model dari plot ACF dan PACF ordo yang dihasilkan terlalu besar.
 
 ### Pendugaan Parameter Model Tentatif
 
@@ -230,7 +230,7 @@ $H_0$ : Ragam sisaan homogen
 
 $H_1$ : Ragam sisaan tidak homogen
 
-Berdasarkan uji Ljung-Box terhadap sisaan kuadrat tersebut, didapat *p-value* sebesar 0.05204yang lebih dari taraf nyata 5% sehingga tak tolak $H_0$ dan menandakan bahwa ragam sisaan homogen.
+Berdasarkan uji Ljung-Box terhadap sisaan kuadrat tersebut, didapat *p-value* sebesar 0.05204 yang lebih dari taraf nyata 5% sehingga tak tolak $H_0$ dan menandakan bahwa ragam sisaan homogen.
 
 ```{r}
 #4) Nilai tengah sisaan sama dengan nol 
@@ -247,11 +247,11 @@ Berdasarkan uji-tersebut, didapat *p-value* sebesar 0.3475 yang lebih besar dari
 
 ### Peramalan
 
-Peramalan dilakukan menggunakan fungsi `forecast()` . Contoh peramalan berikut ini dilakukan untuk 30 periode ke depan.
+Peramalan dilakukan menggunakan fungsi `forecast()` . Contoh peramalan berikut ini dilakukan untuk 58 periode ke depan.
 
 ```{r}
 #---FORECAST---#
-ramalan.da <- forecast::forecast(model1.da, h = 30) 
+ramalan.da <- forecast::forecast(model1.da, h = 58) 
 ramalan.da
 data.ramalan.da <- ramalan.da$mean
 plot(ramalan.da)
@@ -268,11 +268,11 @@ ts.plot(train.ts,hasil)
 ```
 
 ```{r}
-perbandingan.da<-matrix(data=c(head(test.ts, n=30), hasil[-1]),
-                     nrow = 30, ncol = 2)
+perbandingan.da<-matrix(data=c(head(test.ts, n=58), hasil[-1]),
+                     nrow = 58, ncol = 2)
 colnames(perbandingan.da)<-c("Aktual","Hasil Forecast")
 perbandingan.da
-accuracy(ts(hasil[-1]), head(test.ts, n=30))
+accuracy(ts(hasil[-1]), head(test.ts, n=58))
 ```
 
 Nilai MAPE yang dihasilkan yaitu sebesar 1.016%, hal ini menandakan akurasi peramalan yang cukup baik.
